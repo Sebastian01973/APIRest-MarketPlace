@@ -11,13 +11,13 @@ public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
-    private Integer idProduuct;
+    private Integer idProduct;
 
     @Column(name = "nombre")
     private String name;
 
     @Column(name = "id_categoria")
-    private String idCategory;
+    private Integer idCategory;
 
 
     @Column(name = "codigo_barras")
