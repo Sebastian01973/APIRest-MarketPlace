@@ -3,6 +3,8 @@ package com.tunja.market.persistence.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "clientes")
@@ -26,5 +28,10 @@ public class ClientEntity {
 
     @Column(name = "correo_electronico")
     private String mail;
+
+    @OneToMany(mappedBy = "client")
+    private List<PurchaseEntity> purchases;
+
+
 
 }

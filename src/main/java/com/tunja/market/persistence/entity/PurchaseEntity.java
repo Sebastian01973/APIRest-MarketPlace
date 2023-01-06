@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -31,5 +32,9 @@ public class PurchaseEntity {
 
     @Column(name = "estado")
     private String state;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente",insertable = false, updatable = false)
+    private ClientEntity client;
 
 }

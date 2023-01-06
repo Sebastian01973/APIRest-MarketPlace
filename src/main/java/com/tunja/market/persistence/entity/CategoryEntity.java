@@ -3,6 +3,8 @@ package com.tunja.market.persistence.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "categorias")
@@ -18,5 +20,8 @@ public class CategoryEntity {
 
     @Column(name = "estado")
     private Boolean state;
+
+    @OneToMany(mappedBy = "category")
+    private List<ProductEntity> products;
 
 }

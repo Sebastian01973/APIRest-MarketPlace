@@ -1,10 +1,9 @@
 package com.tunja.market.persistence.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -21,4 +20,13 @@ public class ProductBuyEntity {
 
     @Column(name = "estado")
     private Boolean state;
+
+    @ManyToOne
+    @JoinColumn(name = "id_compra", insertable = false,updatable = false)
+    private PurchaseEntity purchase;
+
+    @ManyToOne
+    @JoinColumn(name = "id_producto",insertable = false,updatable = false)
+    private ProductEntity product;
+
 }
