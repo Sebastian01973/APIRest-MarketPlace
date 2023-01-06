@@ -37,4 +37,7 @@ public class PurchaseEntity {
     @JoinColumn(name = "id_cliente",insertable = false, updatable = false)
     private ClientEntity client;
 
+    @OneToMany(mappedBy = "purchase")
+    private List<ProductBuyEntity> products;
+
 }
