@@ -2,6 +2,10 @@ package com.tunja.market.web.controller;
 
 import com.tunja.market.domain.Product;
 import com.tunja.market.domain.service.ProductService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +21,24 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+
+
     @GetMapping()
+    @ApiOperation("Get all supermarket products")
+    @ApiResponse(code = 200,message = "OK")
     public ResponseEntity<List<Product>> getAll(){
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{productId}")
-    public ResponseEntity<Product> getProduct(@PathVariable int productId) {
+    @ApiOperation("Search a product with an ID")
+    @ApiResponses({
+            @ApiResponse(code = 200,message = "OK"),
+            @ApiResponse(code = 404,message = "NOT_FOUND")
+    })
+    public ResponseEntity<Product> getProduct(
+            @ApiParam(value = "The id of product",required = true,example = "7")
+            @PathVariable int productId) {
         return productService.getProduct(productId)
                 .map(product -> new ResponseEntity<>(product,HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
