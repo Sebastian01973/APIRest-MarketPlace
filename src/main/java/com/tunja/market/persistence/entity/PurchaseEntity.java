@@ -37,7 +37,7 @@ public class PurchaseEntity {
     @JoinColumn(name = "id_cliente",insertable = false, updatable = false)
     private ClientEntity client;
 
-    @OneToMany(mappedBy = "purchase")
+    @OneToMany(mappedBy = "purchase", cascade = {CascadeType.ALL})
     private List<ProductBuyEntity> products;
 
 }
