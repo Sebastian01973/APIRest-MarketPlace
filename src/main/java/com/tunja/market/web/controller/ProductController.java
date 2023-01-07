@@ -2,17 +2,16 @@ package com.tunja.market.web.controller;
 
 import com.tunja.market.domain.Product;
 import com.tunja.market.domain.service.ProductService;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
@@ -24,20 +23,20 @@ public class ProductController {
 
 
     @GetMapping()
-    @ApiOperation("Get all supermarket products")
-    @ApiResponse(code = 200,message = "OK")
+    @Operation(summary = "Get all supermarket products")
+    @ApiResponse(responseCode  = "200",description  = "OK")
     public ResponseEntity<List<Product>> getAll(){
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{productId}")
-    @ApiOperation("Search a product with an ID")
+    @Operation(summary = "Search a product with an ID")
     @ApiResponses({
-            @ApiResponse(code = 200,message = "OK"),
-            @ApiResponse(code = 404,message = "NOT_FOUND")
+            @ApiResponse(responseCode = "200", description = "OK"),
+            @ApiResponse(responseCode = "404", description = "Product not found")
     })
     public ResponseEntity<Product> getProduct(
-            @ApiParam(value = "The id of product",required = true,example = "7")
+            @Parameter(description = "Product ID", required = true, example = "7")
             @PathVariable int productId) {
         return productService.getProduct(productId)
                 .map(product -> new ResponseEntity<>(product,HttpStatus.OK))
