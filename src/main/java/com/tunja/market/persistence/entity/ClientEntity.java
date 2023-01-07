@@ -21,7 +21,7 @@ public class ClientEntity {
     private String last_name;
 
     @Column(name = "celular")
-    private String phone;
+    private Long phone;
 
     @Column(name = "direccion")
     private String address;
