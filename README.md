@@ -47,7 +47,7 @@ $ git clone https://github.com/Sebastian01973/APIRest-MarketPlace.git
 
 Los endpoints se encuentran en el archivo adjunto EndPoints.json, en donde se tienen que importar en postman para hacer uso de estos mismos.
       
-## Futuros Cambios
+## 🚀 Futuros Cambios
 
 Para seguir trabajando en este simulador se tiene desde la parte lógica trabajar con más de 1 barbero, pero a través de la vista no lo hace, por lo cual se espera a un futuro hacer esta funcionalidad, además de realizar nuevas funcionalidades como:
 - Generar mayor cantidad de reportes con la información
