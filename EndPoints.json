@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "5f94741e-3491-434b-a570-83d6737ea5cd",
+		"name": "Sprint-Platzi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21399134"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get all Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/market/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"market",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/market/products/49",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"market",
+								"products",
+								"49"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/market/products/category/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"market",
+								"products",
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lechuga\",\r\n    \"categoryId\": 1,\r\n    \"salePrice\": 2500.0,\r\n    \"stock\": 60,\r\n    \"active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9080/market/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"market",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/market/products/53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"market",
+								"products",
+								"53"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchases",
+			"item": [
+				{
+					"name": "Get all Purchases",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/market/purchase",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"market",
+								"purchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get purchase by clientId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9080/market/purchase/client/4546221",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"market",
+								"purchase",
+								"client",
+								"4546221"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Purchases",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"clientId\": \"4546221\",\r\n        \"date\": \"2022-08-10T17:30:00\",\r\n        \"paymentMethod\": \"T\",\r\n        \"comment\": \"\",\r\n        \"state\": \"P\",\r\n        \"products\": [\r\n            {\r\n                \"productId\": 1,\r\n                \"quantity\": 10,\r\n                \"total\": 3000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 24,\r\n                \"quantity\": 1,\r\n                \"total\": 4000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 27,\r\n                \"quantity\": 1,\r\n                \"total\": 9000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 36,\r\n                \"quantity\": 1,\r\n                \"total\": 40000.0,\r\n                \"active\": true\r\n            },\r\n            {\r\n                \"productId\": 49,\r\n                \"quantity\": 2,\r\n                \"total\": 16400.0,\r\n                \"active\": true\r\n            }\r\n        ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9080/market/purchase",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9080",
+							"path": [
+								"market",
+								"purchase"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
