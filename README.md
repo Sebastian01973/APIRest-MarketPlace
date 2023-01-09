@@ -8,7 +8,7 @@
 
 ## 💻 Sobre este Proyecto
 
-Controla las operaciones de un supermercado a través de una API con Java Spring. Se conecta a través de una base de datos (PostGrees), Se crean todos los servicios para manejar los productos y compras, finalmente se utiliza la aplicación para ser consumida.
+Controla las operaciones de un supermercado a través de una API con Java Spring. Se conecta a través de una base de datos (PostGresql), Se crean todos los servicios para manejar los productos y compras, finalmente se utiliza la aplicación para ser consumida.
 
 Este proyecto tiene fines de aprendizaje y esta basado en un [Curso de Java Spring](https://platzi.com/cursos/java-spring/) en platzi.
 
