@@ -8,7 +8,7 @@
 
 ## 💻 Sobre este Proyecto
 
-Controla las operaciones de un supermercado a través de una API con Java Spring. Se conecta a través de una base de datos (PostGrees), Se crean todos los servicios para manejar los productos y compras, finalmente se utiliza la aplicación para ser consumida.
+Controla las operaciones de un supermercado a través de una API con Java Spring. Se conecta a través de una base de datos (PostGresql), Se crean todos los servicios para manejar los productos y compras, finalmente se utiliza la aplicación para ser consumida.
 
 Este proyecto tiene fines de aprendizaje y esta basado en un [Curso de Java Spring](https://platzi.com/cursos/java-spring/) en platzi.
 
@@ -47,7 +47,7 @@ $ git clone https://github.com/Sebastian01973/APIRest-MarketPlace.git
 
 Los endpoints se encuentran en el archivo adjunto EndPoints.json, en donde se tienen que importar en postman para hacer uso de estos mismos.
       
-## Futuros Cambios
+## 🚀 Futuros Cambios
 
 Para seguir trabajando en este simulador se tiene desde la parte lógica trabajar con más de 1 barbero, pero a través de la vista no lo hace, por lo cual se espera a un futuro hacer esta funcionalidad, además de realizar nuevas funcionalidades como:
 - Generar mayor cantidad de reportes con la información
